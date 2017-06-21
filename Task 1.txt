@@ -1,0 +1,1 @@
+Complete the subtasks in order, making a commit after each one.

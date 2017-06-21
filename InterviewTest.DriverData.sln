@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewTest.DriverData.Console", "InterviewTest.DriverData.Console\InterviewTest.DriverData.Console.csproj", "{D271F296-A3F7-4513-AA00-57E3954D7E52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewTest.DriverData", "InterviewTest.DriverData\InterviewTest.DriverData.csproj", "{19D4A738-AE2F-4ABF-8C3B-9D66FC7753F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewTest.DriverData.UnitTests", "InterviewTest.DriverData.UnitTests\InterviewTest.DriverData.UnitTests.csproj", "{A17C1556-7CAA-456F-A3AA-A78326B258BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{95DA3BE1-945A-4A20-A9BE-D723865FF615}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task 1 - Add some analysers", "Task 1 - Add some analysers", "{CBEEAF99-8EAC-4F2F-93BD-03206066D80A}"
+	ProjectSection(SolutionItems) = preProject
+		Task 1.txt = Task 1.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Subtasks", "Subtasks", "{2AF93097-A37F-4B1D-976F-4E820739C41D}"
+	ProjectSection(SolutionItems) = preProject
+		Task 1.1.txt = Task 1.1.txt
+		Task 1.2.txt = Task 1.2.txt
+		Task 1.3.txt = Task 1.3.txt
+		Task 1.4.txt = Task 1.4.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task 2 - Improve the analyser lookup", "Task 2 - Improve the analyser lookup", "{6DA9625C-C7D0-4D91-A435-4F8EDDB3AEC4}"
+	ProjectSection(SolutionItems) = preProject
+		Task 2.txt = Task 2.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D271F296-A3F7-4513-AA00-57E3954D7E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D271F296-A3F7-4513-AA00-57E3954D7E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D271F296-A3F7-4513-AA00-57E3954D7E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D271F296-A3F7-4513-AA00-57E3954D7E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19D4A738-AE2F-4ABF-8C3B-9D66FC7753F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D4A738-AE2F-4ABF-8C3B-9D66FC7753F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D4A738-AE2F-4ABF-8C3B-9D66FC7753F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D4A738-AE2F-4ABF-8C3B-9D66FC7753F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A17C1556-7CAA-456F-A3AA-A78326B258BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A17C1556-7CAA-456F-A3AA-A78326B258BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A17C1556-7CAA-456F-A3AA-A78326B258BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A17C1556-7CAA-456F-A3AA-A78326B258BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CBEEAF99-8EAC-4F2F-93BD-03206066D80A} = {95DA3BE1-945A-4A20-A9BE-D723865FF615}
+		{2AF93097-A37F-4B1D-976F-4E820739C41D} = {CBEEAF99-8EAC-4F2F-93BD-03206066D80A}
+		{6DA9625C-C7D0-4D91-A435-4F8EDDB3AEC4} = {95DA3BE1-945A-4A20-A9BE-D723865FF615}
+	EndGlobalSection
+EndGlobal
