@@ -29,6 +29,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task 2 - Improve the analys
 		Task 2.txt = Task 2.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task 3 - Reading data files", "Task 3 - Reading data files", "{40750415-EB50-473E-A90C-197A54C74D53}"
+	ProjectSection(SolutionItems) = preProject
+		Task 3.txt = Task 3.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task 4 - Improve our tests", "Task 4 - Improve our tests", "{A1251B34-87D6-4DCE-A4B0-3D0EDDD36EEC}"
+	ProjectSection(SolutionItems) = preProject
+		Task 4.txt = Task 4.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,5 +65,7 @@ Global
 		{CBEEAF99-8EAC-4F2F-93BD-03206066D80A} = {95DA3BE1-945A-4A20-A9BE-D723865FF615}
 		{2AF93097-A37F-4B1D-976F-4E820739C41D} = {CBEEAF99-8EAC-4F2F-93BD-03206066D80A}
 		{6DA9625C-C7D0-4D91-A435-4F8EDDB3AEC4} = {95DA3BE1-945A-4A20-A9BE-D723865FF615}
+		{40750415-EB50-473E-A90C-197A54C74D53} = {95DA3BE1-945A-4A20-A9BE-D723865FF615}
+		{A1251B34-87D6-4DCE-A4B0-3D0EDDD36EEC} = {95DA3BE1-945A-4A20-A9BE-D723865FF615}
 	EndGlobalSection
 EndGlobal
