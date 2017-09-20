@@ -39,13 +39,8 @@ namespace InterviewTest.DriverData.Analysers
             if (f.Count() == 0)
                 return this.DefaultAnalysis();
 
-            // Compute weighted average and duration
-            return new HistoryAnalysis
-            {
-                // If driver finishes ride early than designated time, total duration needs to be computed
-                AnalysedDuration =  TimeSpan.FromTicks(f.Sum(item => item.Duration.Ticks)),
-                DriverRating = decimal.Divide(f.Sum(item => item.Total), f.Sum(item => item.Duration.Ticks))
-            };
+            // Compute weighted average and duration            
+            return this.ComputeHistoryAnalysis(f, undocumented.Count() > 0);
         }
     }
 }
