@@ -106,10 +106,19 @@ namespace InterviewTest.DriverData.UnitTests.Analysers
             };
 
             var actualResult = new DeliveryDriverAnalyser().Analyse(
-                CannedDrivingData.GetPeriods(@"InterviewTest.DriverData.UnitTests/TestHistoryData/noperiods.json"), false);
+                CannedDrivingData.GetPeriods("InterviewTest.DriverData.UnitTests/TestHistoryData/noperiods.json"), false);
 
             Assert.That(actualResult.AnalysedDuration, Is.EqualTo(expectedResult.AnalysedDuration));
             Assert.That(actualResult.DriverRating, Is.EqualTo(expectedResult.DriverRating).Within(0.001m));
+        }
+
+        [Test]
+        public void DelieryExpectExceptionInOverlappedPeriods()
+        {
+            Assert.Throws<AnalyzerValidationException>(() =>
+            {
+                new DeliveryDriverAnalyser().Analyse(CannedDrivingData.GetPeriods("InterviewTest.DriverData.UnitTests/TestHistoryData/overlappedperiods.json"), true);
+            });
         }
     }
 }

@@ -54,6 +54,7 @@
     <None Include="packages.config" />
     <None Include="TestHistoryData\canneddata.json" />
     <None Include="TestHistoryData\noperiods.json" />
+    <None Include="TestHistoryData\overlappedperiods.json" />
     <None Include="TestHistoryData\rating1.json" />
   </ItemGroup>
   <ItemGroup>
