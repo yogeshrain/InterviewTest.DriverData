@@ -69,7 +69,7 @@ namespace InterviewTest.DriverData.Extensions
                     }).ToList().AsReadOnly();
         }
 
-        public static IReadOnlyCollection<Period> SpliceZeroSpeed(this IReadOnlyCollection<Period> history)
+        public static IReadOnlyCollection<Period> SpliceZeroSpeedPeriods(this IReadOnlyCollection<Period> history)
         {
             return history.SkipWhile(item => item.AverageSpeed == 0).Reverse().
                 SkipWhile(item => item.AverageSpeed == 0).Reverse().ToList().AsReadOnly();
