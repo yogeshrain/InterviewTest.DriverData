@@ -25,7 +25,7 @@ namespace InterviewTest.Commands
             bool bypass;
             bool.TryParse(arguments.ElementAt(1), out bypass); // Never mind exception here
             BypassPenlty = bypass;
-            DataSourcePath = arguments.ElementAt(2) ?? string.Empty;
+            DataSourcePath = arguments.Count() > 2 ? arguments.ElementAt(2) : string.Empty;
             _analyser = AnalyserLookup.GetAnalyser(analysisType);
 		}
 
