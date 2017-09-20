@@ -25,8 +25,8 @@ namespace InterviewTest.DriverData.Extensions
             return new HistoryAnalysis
             {
                 // If driver finishes ride early than designated time, total duration needs to be computed
-                AnalysedDuration = TimeSpan.FromTicks(result.Sum(item => item.Duration.Ticks)),
-                DriverRating = decimal.Divide(decimal.Divide(result.Sum(item => item.Total), result.Sum(item => item.Duration.Ticks)),
+                AnalysedDuration = TimeSpan.FromTicks(result.Sum(item => (long)item.Duration.Ticks)),
+                DriverRating = decimal.Divide(decimal.Divide(result.Sum(item => (decimal)item.Total), result.Sum(item => (long)item.Duration.Ticks)),
                     hasUndocumentedPeriods ? 2 : 1)
             };
         }
