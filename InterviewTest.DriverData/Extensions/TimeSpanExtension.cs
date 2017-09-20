@@ -10,8 +10,8 @@ namespace InterviewTest.DriverData.Extensions
     {
         public static bool IsInRange(this TimeSpan current,TimeSpan endPeriod,TimeSpan start, TimeSpan end)
         {
-            return (current < start && endPeriod > start) ||
-                (current > start && current < end);
+            return (current <= start && endPeriod > start) ||
+                (current >= start && current < end);
         }
     }
 }
