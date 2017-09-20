@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Linq;
 
 namespace InterviewTest.DriverData
 {
@@ -53,5 +57,19 @@ namespace InterviewTest.DriverData
 				AverageSpeed = 0m
 			}
 		};
-	}
+
+        public static IReadOnlyCollection<Period> GetPeriods(string path)
+        {
+            try
+            {
+                return JsonConvert.DeserializeObject<List<Period>>(File.ReadAllText(path)).
+                    AsReadOnly();
+            }
+            catch (Exception ex)
+            {
+                throw new AnalyzerHistoryParseException($"Error in parsing analyser history:{path}", ex);
+            }
+        }
+
+    }
 }

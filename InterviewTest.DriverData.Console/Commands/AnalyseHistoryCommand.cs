@@ -17,18 +17,22 @@ namespace InterviewTest.Commands
         //Additional command option
         public bool BypassPenlty { get; set; }
 
+        public string DataSourcePath { get; set; }
+
 		public AnalyseHistoryCommand(IReadOnlyCollection<string> arguments)
 		{
             var analysisType = arguments.Count() > 1 ? arguments.First() : arguments.Single();
             bool bypass;
             bool.TryParse(arguments.ElementAt(1), out bypass); // Never mind exception here
             BypassPenlty = bypass;
+            DataSourcePath = arguments.ElementAt(2) ?? string.Empty;
             _analyser = AnalyserLookup.GetAnalyser(analysisType);
 		}
 
 		public void Execute()
 		{
-            var analysis = _analyser.Analyse(CannedDrivingData.History, BypassPenlty);
+            var analysis = _analyser.Analyse(string.IsNullOrEmpty(DataSourcePath) ? CannedDrivingData.History :
+                CannedDrivingData.GetPeriods(DataSourcePath), BypassPenlty);
 
 			Console.Out.WriteLine($"Analysed period: {analysis.AnalysedDuration:g}");
 			Console.Out.WriteLine($"Driver rating: {analysis.DriverRating:P}");
