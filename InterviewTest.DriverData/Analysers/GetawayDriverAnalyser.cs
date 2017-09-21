@@ -11,6 +11,8 @@ namespace InterviewTest.DriverData.Analysers
 	{
         const int MINSPEED = 0,
                     MAXSPEED = 80;
+        TimeSpan STARTTIME = new TimeSpan(13, 0, 0),
+                 ENDTIME = new TimeSpan(14, 0, 0);
         public HistoryAnalysis Analyse(IReadOnlyCollection<Period> history)
 		{
             if (history == null || history.Count() == 0)
@@ -19,8 +21,8 @@ namespace InterviewTest.DriverData.Analysers
 
             // Add missing undocumated periods as well as splice ends periods to honour working hours
             // Remove leading and trailing periods with zero speed
-            var f = history.Filter(TimeSpan.Zero, TimeSpan.Zero, out undocumented).
-                 SpliceZeroSpeedPeriods().
+            var f = history.SpliceZeroSpeedPeriods().
+                Filter(STARTTIME, ENDTIME, out undocumented).                 
                  Select(item =>
                  {
                      // Calculate rating based on rules
@@ -40,7 +42,7 @@ namespace InterviewTest.DriverData.Analysers
                 return this.DefaultAnalysis();
 
             // Compute weighted average and duration
-            return this.ComputeHistoryAnalysis(f, undocumented.Count() > 0);
+            return this.ComputeHistoryAnalysis(f, undocumented);
         }
 	}
 }

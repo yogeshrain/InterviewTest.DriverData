@@ -19,7 +19,7 @@ namespace InterviewTest.DriverData.UnitTests.Analysers
 				DriverRating = 0.7638m
 			};
 
-			var actualResult = new DeliveryDriverAnalyser().Analyse(CannedDrivingData.History);
+			var actualResult = new DeliveryDriverAnalyser().Analyse(CannedDrivingData.History, true);
 
 			Assert.That(actualResult.AnalysedDuration, Is.EqualTo(expectedResult.AnalysedDuration));
 			Assert.That(actualResult.DriverRating, Is.EqualTo(expectedResult.DriverRating).Within(0.001m));
@@ -53,7 +53,7 @@ namespace InterviewTest.DriverData.UnitTests.Analysers
         {
             var expectedResult = new HistoryAnalysis
             {
-                AnalysedDuration = new TimeSpan(8, 0, 0),
+                AnalysedDuration = new TimeSpan(7, 45, 0),
                 DriverRating = 0.7638m
             };
 
@@ -69,12 +69,12 @@ namespace InterviewTest.DriverData.UnitTests.Analysers
         {
             var expectedResult = new HistoryAnalysis
             {
-                AnalysedDuration = new TimeSpan(8, 0, 0),
-                DriverRating = 0.3819m
+                AnalysedDuration = new TimeSpan(7, 45, 0),
+                DriverRating = 0.7638m
             };
 
             var actualResult = new DeliveryDriverAnalyser().Analyse(
-                CannedDrivingData.GetPeriods(@"InterviewTest.DriverData.UnitTests/TestHistoryData/canneddata.json"), false);
+                CannedDrivingData.GetPeriods(@"InterviewTest.DriverData.UnitTests/TestHistoryData/canneddata.json"), true);
 
             Assert.That(actualResult.AnalysedDuration, Is.EqualTo(expectedResult.AnalysedDuration));
             Assert.That(actualResult.DriverRating, Is.EqualTo(expectedResult.DriverRating).Within(0.001m));

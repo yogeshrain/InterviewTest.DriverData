@@ -17,7 +17,10 @@ namespace InterviewTest.DriverData.Extensions
             undocumented = new List<Period>();
 
             // Enumerate to identify error and undocumeted periods
-            var enumerator = result.OrderBy(item => item.Start).GetEnumerator();
+            var enumerator = result.OrderBy(item => item.Start).
+                Where(instance => (start == TimeSpan.Zero && end == TimeSpan.Zero) || 
+                    (instance.Start.TimeOfDay.IsInRange(instance.End.TimeOfDay, start, end))).GetEnumerator();
+
             enumerator.MoveNext();
             var previous = enumerator.Current;
             while (enumerator.MoveNext())

@@ -19,20 +19,21 @@ namespace InterviewTest.DriverData.Extensions
         }
 
         public static HistoryAnalysis ComputeHistoryAnalysis(this IAnalyser analyser, IEnumerable<dynamic> result, 
-            bool hasUndocumentedPeriods)
+            List<Period> undocumented)
         {
             // Compute weighted average and duration
             return new HistoryAnalysis
             {
                 // If driver finishes ride early than designated time, total duration needs to be computed
-                AnalysedDuration = TimeSpan.FromTicks(result.Sum(item => (long)item.Duration.Ticks)),
+                AnalysedDuration = TimeSpan.FromTicks(result.Sum(item => (long)item.Duration.Ticks) - 
+                    undocumented.Sum(item => (item.End-item.Start).Ticks)),
                 DriverRating = decimal.Divide(decimal.Divide(result.Sum(item => (decimal)item.Total), result.Sum(item => (long)item.Duration.Ticks)),
-                    hasUndocumentedPeriods ? 2 : 1)
+                    undocumented.Count() > 0 ? 2 : 1)
             };
         }
 
         public static HistoryAnalysis Analyse(this IAnalyser analyser, IReadOnlyCollection<Period> history,
-            bool bypassPenalty)
+            bool bypassPenalty, TimeSpan? start=null, TimeSpan? end=null)
         {
             // Note: Assumption here is existing analysers implementation should not be amended
             // It's actually going one step in reverse and some additional computation
@@ -43,7 +44,7 @@ namespace InterviewTest.DriverData.Extensions
                 List<Period> undocumented = null;
 
                 // Assumption is no Stat and End time mentioned
-                history.Filter(TimeSpan.Zero, TimeSpan.Zero, out undocumented);
+                history.Filter(start??TimeSpan.Zero, end??TimeSpan.Zero, out undocumented);
 
                 // Double the rating
                 result.DriverRating = decimal.Multiply(result.DriverRating, undocumented.Count() > 0 ? 2 : 1);

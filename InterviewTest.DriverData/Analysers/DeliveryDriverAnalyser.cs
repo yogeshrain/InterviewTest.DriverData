@@ -40,7 +40,7 @@ namespace InterviewTest.DriverData.Analysers
                 return this.DefaultAnalysis();
 
             // Compute weighted average and duration            
-            return this.ComputeHistoryAnalysis(f, undocumented.Count() > 0);
+            return this.ComputeHistoryAnalysis(f, undocumented);
         }
     }
 }
